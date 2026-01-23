@@ -1,0 +1,17 @@
+<h1>Hello patient </h1>
+
+{% if doctors %}
+<h1> List of doctors available </h1>
+<ul>
+    {% for doc in doctors %}
+    <li>
+            Speciality:{{doc.specilities}}
+            <a href="{{doc.get_absolute_url}}">Experience:{{doc.experience}}</a>
+            Consultation Fee:{{doc.Consultation}}
+            Bio:{{doc.bio}}
+    </li>
+</ul>
+{% endfor %}
+
+{% endif %}
+    <a href="{% url 'logout' %}">Logout</a>

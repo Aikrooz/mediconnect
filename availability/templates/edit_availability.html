@@ -1,0 +1,6 @@
+<h1>Edit Availability_Time</h1>
+<form method="POST" action="{% url 'doctor_homepage' %}">
+    {% csrf_token %}
+    {{edit_form.as_p}}
+    <input type="submit" value="finish">
+</form>

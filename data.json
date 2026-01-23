@@ -1,0 +1,320 @@
+[
+{
+  "model": "accounts.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$GD695Hl4p5BTn6Ew9ShDAj$H4HNKmhcbkUGaHnMa7b/mrfjTt5jV4kW0dEl7tppZJc=",
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "Emmaneul kassa",
+    "last_name": "Kasssa",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-01-11T20:59:05Z",
+    "email": "aaronjameskashim@gmail.com",
+    "role": "DOCTOR",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$lrgX6XfZJbTVaWis7wvfh6$5WSunESZ27KB/sm23++qS4UYe1Sx361tvw7r6DtaNWE=",
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "Daniel Agbo",
+    "last_name": "Tarsa",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-01-11T21:13:32Z",
+    "email": "aaronjames@gmail.com",
+    "role": "DOCTOR",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$xCnBvFPFOWgIBz6mHI7MxP$mO6+UXysuEpBHfpv7/8L4h501J9OGDs0JY5J85exEys=",
+    "last_login": "2026-01-12T00:22:13Z",
+    "is_superuser": false,
+    "first_name": "Panguru",
+    "last_name": "Aaronjames kashim",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-01-11T21:14:41Z",
+    "email": "aaronjame@gmail.com",
+    "role": "DOCTOR",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$shmLNnEmm8xqR3pQQPHbVJ$5ErRSn8mxMrbfIiH3ZK/6XxxJjyaTW/Bv6/Bgtf2gSc=",
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "lamine",
+    "last_name": "yamal",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-01-11T21:20:59Z",
+    "email": "lamine@gmail.com",
+    "role": "DOCTOR",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$CKCdOvE5cmq20IFlieZ9sv$f+bPFRbbS+x8a5Xc5Z6Fcsdege8yg/dteKo6EpXBsTw=",
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "lamine",
+    "last_name": "Raphina",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-01-11T21:21:50Z",
+    "email": "lamineyamal@gmail.com",
+    "role": "DOCTOR",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$DCzCNo66qaTNoa17hDYFjD$EcmwppIrUITbEHTrscETZR3Sw/KPS+kB3/cCU99OeCs=",
+    "last_login": "2026-01-11T21:26:55Z",
+    "is_superuser": false,
+    "first_name": "Leonel",
+    "last_name": "Messi",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-01-11T21:26:29Z",
+    "email": "messi@gmail.com",
+    "role": "DOCTOR",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$JwXbb0XFOMqXTc25noG4hq$XpOV8SgliNLwThc3V0C6G+zryHmAOqSvymQsvZ/qWiA=",
+    "last_login": "2026-01-17T17:40:55Z",
+    "is_superuser": false,
+    "first_name": "leonardo",
+    "last_name": "da vinci",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-01-12T00:21:10Z",
+    "email": "leo@gmail.com",
+    "role": "DOCTOR",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 8,
+  "fields": {
+    "password": "12345",
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "luke",
+    "last_name": "balmer",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-01-17T17:44:14Z",
+    "email": "luke@gmail.com",
+    "role": "PATIENT",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$fu2bag7Lt80SbCvT3QXtuB$5Dl7rz37/4uPSJMtjDEcKZs0Wz0IJTbQuCfKw0x6llU=",
+    "last_login": "2026-01-17T23:17:25.103Z",
+    "is_superuser": true,
+    "first_name": "",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-01-17T18:52:28.834Z",
+    "email": "admin@gmail.com",
+    "role": "DOCTOR",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$FnriDtswUkV4bSUl2D17U1$L8d6NaPiYeDpEUae3NqtZ7S7Bh4UIQztBXlWL2jR9G4=",
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "aqulia",
+    "last_name": "Theophilus",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-01-17T18:54:55Z",
+    "email": "aquilia@gmail.com",
+    "role": "PATIENT",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.doctorprofilemodel",
+  "pk": 1,
+  "fields": {
+    "user": 3,
+    "specialities": "Cardiologist2",
+    "experience": 1,
+    "consultations_fee": 1,
+    "bio": "bvsdfbs",
+    "is_verified": false
+  }
+},
+{
+  "model": "accounts.doctorprofilemodel",
+  "pk": 2,
+  "fields": {
+    "user": 6,
+    "specialities": "Cardiologist2",
+    "experience": 3,
+    "consultations_fee": 2,
+    "bio": "gcluyfluy",
+    "is_verified": false
+  }
+},
+{
+  "model": "accounts.doctorprofilemodel",
+  "pk": 3,
+  "fields": {
+    "user": 1,
+    "specialities": "Nursing",
+    "experience": 2,
+    "consultations_fee": 14,
+    "bio": "NOthing at all must show in this page",
+    "is_verified": false
+  }
+},
+{
+  "model": "accounts.doctorprofilemodel",
+  "pk": 4,
+  "fields": {
+    "user": 10,
+    "specialities": "Optometrist",
+    "experience": 232,
+    "consultations_fee": 7344,
+    "bio": "What the hell do you mean please",
+    "is_verified": false
+  }
+},
+{
+  "model": "availability.availabilitymodel",
+  "pk": 1,
+  "fields": {
+    "doctor_user": 6,
+    "day_of_week": "Tuesday",
+    "start_time": "04:21:00",
+    "end_time": "07:21:00"
+  }
+},
+{
+  "model": "availability.availabilitymodel",
+  "pk": 2,
+  "fields": {
+    "doctor_user": 3,
+    "day_of_week": "Monday",
+    "start_time": "01:25:00",
+    "end_time": "06:22:00"
+  }
+},
+{
+  "model": "availability.availabilitymodel",
+  "pk": 3,
+  "fields": {
+    "doctor_user": 7,
+    "day_of_week": "Monday",
+    "start_time": "01:23:00",
+    "end_time": "02:23:00"
+  }
+},
+{
+  "model": "availability.availabilitymodel",
+  "pk": 4,
+  "fields": {
+    "doctor_user": 7,
+    "day_of_week": "Monday",
+    "start_time": "09:54:00",
+    "end_time": "09:56:00"
+  }
+},
+{
+  "model": "availability.availabilitymodel",
+  "pk": 5,
+  "fields": {
+    "doctor_user": 7,
+    "day_of_week": "Monday",
+    "start_time": "12:54:00",
+    "end_time": "15:56:00"
+  }
+},
+{
+  "model": "availability.availabilitymodel",
+  "pk": 6,
+  "fields": {
+    "doctor_user": 7,
+    "day_of_week": "Thursday",
+    "start_time": "15:54:00",
+    "end_time": "15:56:00"
+  }
+},
+{
+  "model": "availability.availabilitymodel",
+  "pk": 7,
+  "fields": {
+    "doctor_user": 7,
+    "day_of_week": "Sunday",
+    "start_time": "15:54:00",
+    "end_time": "15:56:00"
+  }
+},
+{
+  "model": "availability.availabilitymodel",
+  "pk": 8,
+  "fields": {
+    "doctor_user": 7,
+    "day_of_week": "Friday",
+    "start_time": "15:54:00",
+    "end_time": "15:56:00"
+  }
+},
+{
+  "model": "availability.availabilitymodel",
+  "pk": 9,
+  "fields": {
+    "doctor_user": 3,
+    "day_of_week": "Monday",
+    "start_time": "15:22:55",
+    "end_time": "15:22:57"
+  }
+}
+]

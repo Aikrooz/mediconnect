@@ -1,0 +1,177 @@
+Mediconnet plan be form practo 
+
+Doctor flow
+THe home page for the app
+Questions to ask myself first
+1.Can the doctor be visible online
+2.Can the doctor make appointment 
+3.Can the appointments be managed reliably
+
+
+Patient flow
+Search bar for the doctors 
+
+
+MUst exist in the mvp are 
+1.doctors
+2.Patient
+
+Core on boarding 
+   1. Doctor onboarding 
+   2 Doctor availabilty
+   3 patient Search
+   4 .appointment booking
+   5. Basic Notifications
+
+Authentication and roles
+    single user model 
+    Role: Doctor and pateint
+
+2.Doctor profile page
+    Name 
+    Speciality
+    Years of experience
+    Hospital Location
+    Consultation fee
+    Is verified (approved by admin)\
+
+3.Availability System
+    Available days
+    slot duration  duration of when the engaged period happened 
+    time slot The range at which an appointment happened
+
+4.Patient Search by 
+    Speciality,Location 
+    doctor cards include tag to view doctor profile and see available slots
+
+5.Appointment booking 
+    Patient:
+        Selects doctor 
+        picks slot
+        books appointment 
+
+    Doctor:
+        Sees booking 
+        can accept or cancel
+
+6.Appointment status system 
+    pending ->confirmed-> completed -> or cancelled
+
+7.Basic Notifications
+    console logs (for mvps)
+    triggered on:
+        booking and cancellations
+
+
+User
+----
+id
+email
+phone
+password
+role (PATIENT / DOCTOR / STAFF / ADMIN)
+is_active
+date_joined
+
+
+PatientProfile
+--------------
+id
+user_id (OneToOne → User)
+gender
+date_of_birth
+
+
+DoctorProfile
+-------------
+id
+user_id (OneToOne → User)
+specialty
+experience_years
+consultation_fee
+bio
+is_verified
+
+
+
+
+Availability
+------------
+id
+doctor_id (ForeignKey → DoctorProfile)
+day_of_week
+start_time
+end_time
+slot_duration
+
+Appointment
+-----------
+id
+doctor_id (FK → DoctorProfile)
+patient_id (FK → PatientProfile)
+clinic_id (FK → Clinic)
+date
+time
+status (PENDING / CONFIRMED / CANCELLED / COMPLETED)
+created_at
+
+Notification
+------------
+id
+user_id (FK → User)
+type
+message
+is_read
+created_at
+
+User
+ ├── PatientProfile (1–1)
+ ├── DoctorProfile (1–1)
+ │    ├── Clinic (1–many)
+ │    ├── Availability (1–many)
+ │    └── Appointment (1–many)
+ │
+PatientProfile
+ └── Appointment (1–many)
+
+Appointment
+ └── Payment (1–1)
+
+PATIENT
+Can:
+    Register & login
+    Search doctors
+    View doctor profiles
+    Book appointment
+    Cancel own appointment
+    View appointment history
+    Cannot:
+    Edit doctor profile
+    See other patients
+    Modify availability
+
+Doctor
+    Can:
+        Create/edit own profile
+        Set availability
+        View appointments booked with them
+        Cancel/reschedule appointments
+        View earnings (later)
+    Cannot:
+        Edit other doctors
+        Book appointments
+        Approve themselves
+
+4️⃣ Django Permissions Strategy (Best Practice)
+Use 3 layers:
+Role check (fast)
+Ownership check (critical)
+Object-level permission (safe)
+
+link a doctor to make fields for the 
+
+
+
+if book equals to true get the patient id and doctors id
+doctor with that id get a notification he has been booked and patient id 
+is used to get the patient details.

@@ -1,0 +1,20 @@
+<h1>Welcome to doctors profile</h1>
+Speciality:{{doctor_detail.specialities}}<br>
+Experience:{{doctor_detail.experience}}<br>
+Consultation:{{doctor_detail.consultation}}<br>
+Bio:{{doctor_detail.bio}}<br>
+
+{% if availabilities %}
+    <ul>
+        {% for availability in availabilities %}
+            <li>
+                Date: {{ availability.day_of_week }} <br>
+                From: {{ availability.start_time }} <br>
+                To: {{ availability.end_time }}<br>
+            </li>
+            <hr>
+        {% endfor %}
+    </ul>
+    {% else %} 
+    <p>No available slots</p>
+{% endif %}

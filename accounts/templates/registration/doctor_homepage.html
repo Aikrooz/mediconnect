@@ -1,0 +1,23 @@
+<h1> Hello Doctor </h1>
+
+    <h2>My Availability</h2>
+
+{% if availabilities %}
+    <ul>
+        {% for availability in availabilities %}
+            <li>
+                Date: {{ availability.day_of_week }} <br>
+                From: {{ availability.start_time }} <br>
+                To: {{ availability.end_time }}<br>
+                <a href="{% url 'edit_availability' availability.id %}">Edit</a>
+            </li>
+            <hr>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No availability added yet.</p>
+{% endif %}
+</ul>
+<a href="{% url 'logout' %}">Logout</a>
+
+<a href="{% url 'availability' %}">Please choose time available</a>
