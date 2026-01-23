@@ -7,6 +7,8 @@ class AppointmentModel(model.Model):
     doctor=models.ForeignKey(DoctorProfileModel,on_delete=models.CASCADE,related_name="doctor_appointement")
     patient=models.ForeignKey(PatientProfileModel,on_delete=models.CASCADE,related_name="patient_appointment")
     book=models.BooleanField(defualt=False)
+    message=models.CharField()
+    read_message=False
     
 
 
