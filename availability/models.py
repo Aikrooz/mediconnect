@@ -17,6 +17,7 @@ class AvailabilityModel(models.Model):
     day_of_week=models.CharField(choices=DAY_OF_WEEK)
     start_time=models.TimeField()#in the forms widget ,make use of input field should have the type =time
     end_time=models.TimeField()
+    slot_duration=models.IntegerField(default=30, help_text="Duration of each Session")
     
 
     class Meta:
