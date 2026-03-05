@@ -1,9 +1,10 @@
 from django.db import models
 
-from account.models import DoctorProfileModel,PatientModel
+from accounts.models import DoctorProfileModel,PatientProfileModel
+from availability.models import AvailabilityModel
 # Create your models here.
 
-class AppointmentModel(model.Model):
+class AppointmentModel(models.Model):
 
     STATUS=[
         ('Pending','Pending'),
@@ -14,9 +15,9 @@ class AppointmentModel(model.Model):
 
     doctor=models.ForeignKey(DoctorProfileModel,on_delete=models.CASCADE,related_name="doctor_appointement")
     patient=models.ForeignKey(PatientProfileModel,on_delete=models.CASCADE,related_name="patient_appointment")
-    date=models.T
-    status
-    reason
-    created_at
-    updated_at
+    slot=models.ForeignKey(AvailabilityModel,on_delete=models.CASCADE,related_name="available_slot")
+    status=models.CharField(choices=STATUS,default="Pending")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+  
 
