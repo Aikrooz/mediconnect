@@ -1,0 +1,36 @@
+{% extends 'booking/base.html' %}
+
+{% block title %}Our Doctors{% endblock %}
+
+{% block content %}
+<h2 style="margin-bottom: 2rem;">Our Medical Specialists</h2>
+
+<div class="grid">
+    {% for doctor in doctors %}
+    <div class="card">
+        <h3 style="color: #2c3e50;">Dr. {{ doctor.name }}</h3>
+        <p style="color: #3498db; font-weight: 600; margin: 0.5rem 0;">
+            {{ doctor.specialty }}
+        </p>
+        <p style="color: #666; margin-bottom: 1rem;">
+            <strong>Available:</strong> 
+            {% for availability in doctor.availabilities.all %}
+                {{ availability.get_day_of_week_display }} 
+                ({{ availability.start_time|time:"g:i A" }} - {{ availability.end_time|time:"g:i A" }})
+                {% if not forloop.last %}<br>{% endif %}
+            {% empty %}
+                No availability set
+            {% endfor %}
+        </p>
+        <div style="display: flex; gap: 0.5rem;">
+            <a href="{% url 'booking:doctor_detail' doctor.id %}" class="btn">View Details</a>
+            <a href="{% url 'booking:book_appointment' %}?doctor={{ doctor.id }}" class="btn btn-success">Book</a>
+        </div>
+    </div>
+    {% empty %}
+    <div class="card">
+        <p>No doctors available at the moment.</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

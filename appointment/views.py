@@ -200,3 +200,23 @@ def update_appointment_status(request, appointment_id):
             messages.success(request, f"Appointment status updated to {new_status}")
     
     return redirect('manage_appointments')
+
+from django.shortcuts import render, get_object_or_404
+
+def index(request):
+    """Homepage"""
+    return render(request, 'booking/index.html')
+
+def doctor_list(request):
+    """List all doctors"""
+    doctors = Doctor.objects.all()
+    return render(request, 'booking/doctor_list.html', {'doctors': doctors})
+
+def doctor_detail(request, doctor_id):
+    """Show doctor details and their availability"""
+    doctor = get_object_or_404(Doctor, id=doctor_id)
+    availabilities = doctor.availabilities.all()
+    return render(request, 'booking/doctor_detail.html', {
+        'doctor': doctor,
+        'availabilities': availabilities
+    })

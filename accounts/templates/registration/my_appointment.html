@@ -1,0 +1,51 @@
+{% extends 'booking/base.html' %}
+
+{% block title %}My Appointments{% endblock %}
+
+{% block content %}
+<h2 style="margin-bottom: 2rem;">My Appointments</h2>
+
+<div class="grid">
+    {% for appointment in appointments %}
+    <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: start;">
+            <div>
+                <h3 style="color: #2c3e50;">Dr. {{ appointment.doctor.name }}</h3>
+                <p style="color: #3498db;">{{ appointment.doctor.specialty }}</p>
+            </div>
+            <span class="badge badge-{{ appointment.status }}">
+                {{ appointment.get_status_display }}
+            </span>
+        </div>
+        
+        <div style="margin: 1rem 0;">
+            <p><strong>Date:</strong> {{ appointment.date|date:"l, F j, Y" }}</p>
+            <p><strong>Time:</strong> {{ appointment.time|time:"g:i A" }}</p>
+            {% if appointment.reason %}
+            <p><strong>Reason:</strong> {{ appointment.reason }}</p>
+            {% endif %}
+        </div>
+        
+        {% if appointment.status != 'cancelled' and appointment.status != 'completed' %}
+        <div style="display: flex; gap: 0.5rem;">
+            <a href="{% url 'booking:book_appointment' %}?edit={{ appointment.id }}" class="btn">Reschedule</a>
+            <form action="{% url 'booking:cancel_appointment' appointment.id %}" method="post" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger" 
+                        onclick="return confirm('Are you sure you want to cancel this appointment?')">
+                    Cancel
+                </button>
+            </form>
+        </div>
+        {% endif %}
+    </div>
+    {% empty %}
+    <div class="card">
+        <p style="text-align: center;">You have no appointments.</p>
+        <div style="text-align: center; margin-top: 1rem;">
+            <a href="{% url 'booking:book_appointment' %}" class="btn btn-success">Book an Appointment</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

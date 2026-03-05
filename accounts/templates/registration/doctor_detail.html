@@ -1,21 +1,45 @@
-<h1>Welcome to doctors profile</h1>
-Speciality:{{doctor_detail.specialities}}<br>
-Experience:{{doctor_detail.experience}}<br>
-Consultation:{{doctor_detail.consultation}}<br>
-Bio:{{doctor_detail.bio}}<br>
+{% extends 'booking/base.html' %}
 
-{% if availabilities %}
-    <ul>
-        {% for availability in availabilities %}
-            <li>
-                Date: {{ availability.day_of_week }} <br>
-                From: {{ availability.start_time }} <br>
-                To: {{ availability.end_time }}<br>
-                Slot:{{availability.slot_duration}}
-            </li>
-            <hr>
-        {% endfor %}
-    </ul>
-    {% else %} 
-    <p>No available slots</p>
-{% endif %}
+{% block title %}Dr. {{ doctor.name }}{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+            <h2>Dr. {{ doctor.name }}</h2>
+            <p style="color: #3498db; font-size: 1.2rem;">{{ doctor.specialty }}</p>
+        </div>
+        <a href="{% url 'booking:book_appointment' %}?doctor={{ doctor.id }}" class="btn btn-success">
+            Book Appointment
+        </a>
+    </div>
+</div>
+
+<div class="card">
+    <h3>Availability Schedule</h3>
+    <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+        <thead>
+            <tr style="background-color: #f8f9fa;">
+                <th style="padding: 0.75rem; text-align: left;">Day</th>
+                <th style="padding: 0.75rem; text-align: left;">Hours</th>
+                <th style="padding: 0.75rem; text-align: left;">Duration</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for availability in availabilities %}
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 0.75rem;">{{ availability.get_day_of_week_display }}</td>
+                <td style="padding: 0.75rem;">
+                    {{ availability.start_time|time:"g:i A" }} - {{ availability.end_time|time:"g:i A" }}
+                </td>
+                <td style="padding: 0.75rem;">{{ availability.slot_duration }} minutes</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="3" style="padding: 1rem; text-align: center;">No availability set</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
